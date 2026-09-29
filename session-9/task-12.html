@@ -1,0 +1,59 @@
+<!-- 12. Simulate a Flipkart-style wishlist: create an array of 3 products (each with name and price), save it in localStorage as 'wishlist', then reload the page and display the wishlist items by reading and parsing the data from localStorage. -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+
+        <h2>My Wishlist</h2>
+
+        <div id="wishlist"></div>
+
+    </div>
+
+    <script>
+        const products = [
+            {
+                name: "Wireless Headphones",
+                price: 1499
+            },
+            {
+                name: "Smart Watch",
+                price: 2499
+            },
+            {
+                name: "Bluetooth Speaker",
+                price: 1999
+            }
+        ];
+
+        localStorage.setItem(
+            "wishlist",
+            JSON.stringify(products)
+        );
+
+        const storedWishlist = localStorage.getItem("wishlist");
+
+        const wishlist = JSON.parse(storedWishlist);
+
+        const wishlistContainer = document.querySelector("#wishlist");
+        wishlist.forEach(function(product) {
+            const productDiv = document.createElement("div");
+
+            productDiv.className = "product";
+
+            productDiv.innerHTML = `
+                <h3>${product.name}</h3>
+                <p class="price">₹${product.price}</p>
+            `;
+            wishlistContainer.appendChild(productDiv);
+        });
+    </script>
+</body>
+</html>

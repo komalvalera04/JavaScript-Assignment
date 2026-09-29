@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h2>Search</h2>
+    <input type="text" id="searchInput" placeholder="Enter search term">
+    <button id="searchButton">Search</button>
+
+    <h3>Recent Searches</h3>
+    <ul id="searchList"></ul>
+
+    <script>
+        function saveRecentSearch(query) {
+
+            const storedSearches = localStorage.getItem("recentSearches");
+            const recentSearches = storedSearches ? JSON.parse(storedSearches) : [];
+
+            recentSearches.push(query);
+
+            localStorage.setItem(
+                "recentSearches",
+                JSON.stringify(recentSearches)
+            );
+
+            displaySearches();
+        }
+
+        function displaySearches() {
+            const searchList = document.querySelector("#searchList");
+            const storedSearches = localStorage.getItem("recentSearches");
+            const recentSearches = storedSearches ? JSON.parse(storedSearches) : [];
+
+            searchList.innerHTML = "";
+            recentSearches.forEach(function(search) {
+                const li = document.createElement("li");
+                li.textContent = search;
+                searchList.appendChild(li);
+            });
+        }
+
+        document.querySelector("#searchButton")
+            .addEventListener("click", function() {
+                const query = document.querySelector("#searchInput").value;
+                if (query.trim() !== "") {
+                    saveRecentSearch(query);
+                }
+            });
+
+        displaySearches();
+    </script>
+
+</body>
+</html>

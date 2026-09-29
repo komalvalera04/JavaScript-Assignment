@@ -1,0 +1,29 @@
+<!-- 1,2. Create an HTML file with a <script> tag and use setTimeout to display a 'Loading your feed...' message after 2 seconds, then replace it with 'Feed loaded!' after another 2 seconds. -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 id="message">Please wait...</h2>
+
+    <script>
+        // After 2 seconds, show "Loading your feed..."
+        setTimeout(function() {
+            document.getElementById("message").textContent =
+                "Loading your feed...";
+
+            // After another 2 seconds, show "Feed loaded!"
+            setTimeout(function() {
+                document.getElementById("message").textContent =
+                    "Feed loaded!";
+            }, 2000);
+
+        }, 2000);
+    </script>
+</body>
+</html>

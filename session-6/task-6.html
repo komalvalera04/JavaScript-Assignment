@@ -1,0 +1,34 @@
+<!-- 6. Build a simple form with an input for a new friend's name and a button labeled 'Add Friend'; when the button is clicked, use querySelector to read the input value and dynamically add a new <li> with that name to a <ul id="friend-list">. -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>My Friends</h2>
+
+    <input type="text" id="friend-input" placeholder="Enter friend's name">
+    <button id="add-friend">Add Friend</button>
+
+    <ul id="friend-list"></ul>
+
+    <script>
+    document.querySelector("#add-friend").addEventListener("click", function () {
+        const friendName = document.querySelector("#friend-input").value.trim();
+
+        if (friendName !== "") {
+        const li = document.createElement("li");
+        li.textContent = friendName;
+
+        document.querySelector("#friend-list").appendChild(li);
+
+        document.querySelector("#friend-input").value = "";
+        }
+    });
+    </script>
+</body>
+</html>

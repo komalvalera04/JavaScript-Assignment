@@ -1,0 +1,25 @@
+<!-- 9. Write a function getRecentSearches() that reads the 'recentSearches' item from localStorage, parses it from JSON, and returns the array. If nothing is saved yet, return an empty array.<br><br><em><strong>Hint:</strong> Check for null before parsing.</em> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function getRecentSearches() {
+        const storedSearches = localStorage.getItem("recentSearches");
+        if (storedSearches === null) {
+            return [];
+        }
+        return JSON.parse(storedSearches);
+    }
+
+    console.log(getRecentSearches());
+
+    </script>
+</body>
+</html>

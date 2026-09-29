@@ -1,0 +1,28 @@
+<!-- 7,8. Remove the last playlist from your playlists array using the pop() method and display the removed object in the console. -->
+
+<script>
+    const playlists = [
+        {
+            name: "Today's Top Hits",
+            numberOfSongs: 50,
+            genre: "Pop"
+        },
+        {
+            name: "Party Hits",
+            numberOfSongs: 40,
+            genre: "Rock"
+        },
+        {
+            name: "Chill Vibes",
+            numberOfSongs: 35,
+            genre: "Lo-fi"
+        }
+    ];
+
+    const removedPlaylist = playlists.pop();
+
+    console.log("Removed playlist:", removedPlaylist);
+
+    console.log("Updated playlists:", playlists);
+
+</script>

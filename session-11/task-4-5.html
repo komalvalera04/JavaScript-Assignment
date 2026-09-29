@@ -1,0 +1,15 @@
+<!-- 4,5. Simulate a Zomato order status updater using callbacks: write a function placeOrder that takes a food item and a callback, waits 1 second using setTimeout, then calls the callback with the message 'Your [item] is being prepared'. -->
+
+
+<script>
+    function placeOrder(item, callback) {
+        setTimeout(function() {
+            callback(`Your ${item} is being prepared`);
+        }, 1000);
+    }
+
+    placeOrder("Pizza", function(message) {
+        console.log(message);
+    });
+
+</script>

@@ -1,0 +1,38 @@
+<!-- 12. Given an array of objects called movies, where each object has properties: title, year, and a nested object rating with keys imdb and rottenTomatoes, write code to print each movie's title and its IMDb rating. -->
+
+
+<script>
+    const movies = [
+        {
+            title: "Vibe",
+            year: 2026,
+            rating: {
+                imdb: 7.3,
+                rottenTomatoes: 80
+            }
+        },
+        {
+            title: "Mirzapur: The Movie",
+            year: 2026,
+            rating: {
+                imdb: 7.7,
+                rottenTomatoes: 80
+            }
+        },
+        {
+            title: "Hanuman Ansh",
+            year: 2026,
+            rating: {
+                imdb: 8.7,
+                rottenTomatoes: 90
+            }
+        }
+    ];
+
+    movies.forEach(function(movie) {
+        console.log(
+            movie.title + " - IMDb Rating: " + movie.rating.imdb
+        );
+    });
+
+</script>

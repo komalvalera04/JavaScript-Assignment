@@ -1,0 +1,14 @@
+<!-- 6. Write a function fetchSongLyrics(song, callback) that simulates fetching lyrics from a server using setTimeout, then calls the callback with the lyrics string. Test it by logging the lyrics for any song title. -->
+
+
+<script>
+    function fetchSongLyrics(song, callback) {
+        setTimeout(function() {
+            const lyrics = `Lyrics for "${song}" are loaded!`;
+            callback(lyrics);
+        }, 2000);
+    }
+    fetchSongLyrics("Beliver", function(lyrics) {
+        console.log(lyrics);
+    });
+</script>

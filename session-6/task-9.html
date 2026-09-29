@@ -1,0 +1,26 @@
+<!-- 9. Create a 'Dark Mode' toggle button that, when clicked, uses getElementById to change the background color of the page and updates the button text to 'Light Mode'.<br><br><em><strong>Hint:</strong> Use the style property to change document.body's background color.</em> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="darkModeBtn">Dark Mode</button>
+
+    <script>
+        document.getElementById("darkModeBtn").addEventListener("click", function () {
+        if (this.innerHTML === "Dark Mode") {
+            document.body.style.backgroundColor = "black";
+            this.innerHTML = "Light Mode";
+        } else {
+            document.body.style.backgroundColor = "white";
+            this.innerHTML = "Dark Mode";
+        }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!-- 6. Use the push() method to add a new playlist object to your playlists array with your favorite genre. Then, use pop() to remove the last playlist and log the updated array after each operation. -->
+
+
+<script>
+    const playlists = [
+        {
+            name: "Today's Top Hits",
+            numberOfSongs: 50,
+            genre: "Pop"
+        },
+        {
+            name: "Party Hits",
+            numberOfSongs: 40,
+            genre: "Rock"
+        },
+        {
+            name: "Chill Vibes",
+            numberOfSongs: 35,
+            genre: "Lo-fi"
+        }
+    ];
+
+    playlists.push({
+        name: "Late Night Vibes",
+        creator: "Arjun",
+        numberOfSongs: 30,
+        genre: "Pop"
+    });
+
+    console.log(playlists);
+
+    playlists.pop();
+
+    console.log(playlists);
+
+</script>

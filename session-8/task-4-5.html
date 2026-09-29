@@ -1,0 +1,31 @@
+<!-- 4,5. Add a new playlist object to your playlists array using the push() method. The new playlist should have a unique name, creator, and numberOfSongs. Print the updated array. -->
+
+
+<script>
+    const playlists = [
+        {
+            name: "Today's Top Hits",
+            numberOfSongs: 50,
+            genre: "Pop"
+        },
+        {
+            name: "Party Hits",
+            numberOfSongs: 40,
+            genre: "Rock"
+        },
+        {
+            name: "Chill Vibes",
+            numberOfSongs: 35,
+            genre: "Lo-fi"
+        }
+    ];
+
+    playlists.push({
+        name: "Midnight Beats",
+        creator: "Arjun",
+        numberOfSongs: 25
+    });
+
+    console.log(playlists);
+
+</script>

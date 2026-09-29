@@ -1,0 +1,74 @@
+<!-- 15. Add a 'Clear Wishlist' button to your wishlist code that removes the 'wishlist' key from localStorage and updates the display immediately.<br><br><em><strong>Constraint:</strong> Use localStorage.removeItem() for this action.</em> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h2>My Wishlist</h2>
+        <button id="clearWishlist">Clear Wishlist</button>
+        <div id="wishlist"></div>
+    </div>
+
+    <script>
+        const products = [
+            {
+                name: "Wireless Headphones",
+                price: 1499
+            },
+            {
+                name: "Smart Watch",
+                price: 2499
+            },
+            {
+                name: "Bluetooth Speaker",
+                price: 1999
+            }
+        ];
+
+        if (localStorage.getItem("wishlist") === null) {
+            localStorage.setItem("wishlist",JSON.stringify(products));
+        }
+
+        function displayWishlist() {
+            const wishlistContainer = document.querySelector("#wishlist");
+            wishlistContainer.innerHTML = "";
+
+            const savedWishlist = localStorage.getItem("wishlist");
+
+            // If wishlist is empty
+            if (savedWishlist === null) {
+                wishlistContainer.innerHTML =
+                    "<p>Your wishlist is empty.</p>";
+                return;
+            }
+
+            const wishlist = JSON.parse(savedWishlist);
+
+            wishlist.forEach(function(product) {
+                const productDiv = document.createElement("div");
+                productDiv.className = "product";
+                productDiv.innerHTML = `
+                    <h3>${product.name}</h3>
+                    <p class="price">₹${product.price}</p>
+                `;
+                wishlistContainer.appendChild(productDiv);
+            });
+        }
+
+        displayWishlist();
+
+        document.querySelector("#clearWishlist")
+            .addEventListener("click", function() {
+
+                localStorage.removeItem("wishlist");
+                displayWishlist();
+            });
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!-- 12. Build a mini 'Now Playing' display like Spotify: show a song title in a <span id="song-title"></span> and a button 'Change Song'; when the button is clicked, update the innerHTML of the span to a new song name from a predefined array. -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Now Playing</h2>
+
+    <p><span id="song-title">Memories</span></p>
+
+    <button id="change-song">Change Song</button>
+
+    <script>
+        const songs = [
+            "Memories",
+            "Believer",
+            "Perfect",
+            "Dandelions"
+        ];
+
+        let currentSong = 0;
+
+        document.getElementById("change-song").addEventListener("click", function () {
+            currentSong = (currentSong + 1) % songs.length;
+
+            document.getElementById("song-title").innerHTML = songs[currentSong];
+        });
+    </script>
+</body>
+</html>

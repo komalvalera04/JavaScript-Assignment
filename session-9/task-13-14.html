@@ -1,0 +1,19 @@
+<!-- 13,14. Debug this code: It tries to save an array of movie names to localStorage, but after reloading, the list doesn't display correctly.<br><br>let movies = ['Jawan', 'Pathaan', 'Dunki'];<br>localStorage.setItem('movies', movies);<br>let saved = localStorage.getItem('movies');<br>let arr = JSON.parse(saved);<br>console.log(arr);<br><br><em><strong>Hint:</strong> Check how movies is being stored and what type localStorage expects.</em> -->
+
+
+<script>
+    let movies = ['Jawan', 'Pathaan', 'Dunki'];
+    localStorage.setItem('movies', movies);
+
+    // Convert array to JSON string before saving
+    localStorage.setItem('movies', JSON.stringify(movies));
+
+    // Get the saved JSON string
+    let saved = localStorage.getItem('movies');
+
+    // Convert JSON string back to an array
+    let arr = JSON.parse(saved);
+
+    console.log(arr);
+
+</script>

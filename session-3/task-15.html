@@ -1,0 +1,14 @@
+<!-- 15. Create a function canOrderFood(isLoggedIn, hasPaymentMethod) that returns true only if both isLoggedIn and hasPaymentMethod are true, using logical operators. Test your function with all possible combinations of true/false. -->
+
+
+<script>
+    function canOrderFood(isLoggedIn, hasPaymentMethod) {
+        return isLoggedIn && hasPaymentMethod;
+    }
+
+    console.log(canOrderFood(true, true));   // true
+    console.log(canOrderFood(true, false));  // false
+    console.log(canOrderFood(false, true));  // false
+    console.log(canOrderFood(false, false)); // false
+
+</script>

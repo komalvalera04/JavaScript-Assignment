@@ -1,0 +1,30 @@
+<!-- 4,5. Write a function that takes a JSON string representing a list of favorite YouTube channels and returns an array of channel names using JSON.parse(). -->
+
+
+<script>
+    function getChannelNames(jsonString) {
+        const channels = JSON.parse(jsonString);
+
+        return channels.map(function(channel) {
+            return channel.name;
+        });
+    }
+
+    const favoriteChannels = `
+    [
+        {
+            "name": "Malody Lab"
+        },
+        {
+            "name": "T-Series"
+        },
+        {
+            "name": "Sony Music"
+        }
+    ]
+    `;
+
+    const channelNames = getChannelNames(favoriteChannels);
+    console.log(channelNames);
+
+</script>

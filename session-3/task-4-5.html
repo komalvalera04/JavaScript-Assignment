@@ -1,0 +1,25 @@
+<!-- 4,5. Write a function showDiscountTag(price) that checks if a product's price is less than 500 using a comparison operator. If true, print 'Special Discount!'; otherwise, print 'Regular Price'.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" name="price" id="price">
+    <button onclick="showDiscountTag()">Submit</button>
+    <p id="message"></p>
+    <script>
+        function showDiscountTag(price){
+            var price=parseInt(document.getElementById('price').value);
+            if(price<500){
+                document.getElementById('message').innerHTML= "Special Discount";
+            }else{
+                document.getElementById('message').innerHTML= "Regular Price";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!-- 10,11. Rewrite a Flipkart-style product search using both a callback version and a Promise version: given an array of products, simulate a 1 second delay before returning all products whose name includes the search term.<br><br><em><strong>Hint:</strong> Use setTimeout to simulate the delay in both approaches.</em> -->
+
+
+<script>
+    // Product array
+    const products = [
+        { name: "iPhone 15", price: 69999 },
+        { name: "Samsung Galaxy S24", price: 74999 },
+        { name: "iPhone 15 Pro", price: 99999 },
+        { name: "OnePlus 12", price: 59999 },
+        { name: "Sony Headphones", price: 8999 }
+    ];
+
+    function searchProductsCallback(products, searchTerm, callback) {
+        setTimeout(function() {
+            const results = products.filter(function(product) {
+                return product.name
+                    .toLowerCase()
+                    .includes(searchTerm.toLowerCase());
+            });
+            callback(results);
+        }, 1000);
+    }
+
+    searchProductsCallback(products, "iPhone", function(results) {
+        console.log("Callback results:", results);
+    });
+
+
+    function searchProductsPromise(products, searchTerm) {
+        return new Promise(function(resolve) {
+            setTimeout(function() {
+                const results = products.filter(function(product) {
+                    return product.name
+                        .toLowerCase()
+                        .includes(searchTerm.toLowerCase());
+                });
+                resolve(results);
+            }, 1000);
+        });
+    }
+
+    searchProductsPromise(products, "Samsung")
+        .then(function(results) {
+            console.log("Promise results:", results);
+        });
+</script>

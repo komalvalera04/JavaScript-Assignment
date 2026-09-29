@@ -1,0 +1,70 @@
+<!-- 7,8. Build a simple web page where users can add their top 3 favorite Zomato restaurants to a list and save it to localStorage using localStorage.setItem(). When the page reloads, the list should automatically load from localStorage and display. -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="restaurantInput" placeholder="Enter restaurant name">
+
+    <button id="addButton">Add Restaurant</button>
+    <button id="clearButton">Clear List</button>
+
+    <h3>Favorite Restaurants:</h3>
+
+    <ul id="restaurantList"></ul>
+
+    <script>
+        displayRestaurants();
+
+        document.querySelector("#addButton")
+            .addEventListener("click", function() {
+                const input = document.querySelector("#restaurantInput");
+                const restaurantName = input.value.trim();
+
+                if (restaurantName === "") {
+                    alert("Please enter a restaurant name.");
+                    return;
+                }
+                
+                const storedRestaurants = localStorage.getItem("favoriteRestaurants");
+                const restaurants = storedRestaurants ? JSON.parse(storedRestaurants) : [];
+
+                if (restaurants.length >= 3) {
+                    alert("You can only add 3 favorite restaurants.");
+                    return;
+                }
+                restaurants.push(restaurantName);
+                localStorage.setItem(
+                    "favoriteRestaurants",
+                    JSON.stringify(restaurants)
+                );
+                input.value = "";
+                displayRestaurants();
+            });
+
+        function displayRestaurants() {
+            const list = document.querySelector("#restaurantList");
+            const storedRestaurants = localStorage.getItem("favoriteRestaurants");
+            const restaurants = storedRestaurants ? JSON.parse(storedRestaurants) : [];
+            list.innerHTML = "";
+
+            restaurants.forEach(function(restaurant) {
+                const li = document.createElement("li");
+                li.textContent = restaurant;
+                list.appendChild(li);
+            });
+        }
+
+        document.querySelector("#clearButton")
+            .addEventListener("click", function() {
+                localStorage.removeItem("favoriteRestaurants");
+                displayRestaurants();
+            });
+    </script>
+</body>
+</html>

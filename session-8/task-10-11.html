@@ -1,0 +1,31 @@
+<!-- 10,11. Use the splice() method to remove the second playlist from your playlists array and insert a new playlist at that position. Print the resulting array.<br><br><em><strong>Hint:</strong> splice(startIndex, deleteCount, newItem) can both remove and add in one call.</em> -->
+
+
+<script>
+    const playlists = [
+        {
+            name: "Today's Top Hits",
+            numberOfSongs: 50,
+            genre: "Pop"
+        },
+        {
+            name: "Party Hits",
+            numberOfSongs: 40,
+            genre: "Rock"
+        },
+        {
+            name: "Chill Vibes",
+            numberOfSongs: 35,
+            genre: "Lo-fi"
+        }
+    ];
+
+    playlists.splice(1, 1, {
+        name: "Bollywood Beats",
+        numberOfSongs: 45,
+        genre: "Bollywood"
+    });
+
+    console.log(playlists);
+
+</script>

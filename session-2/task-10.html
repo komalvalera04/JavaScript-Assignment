@@ -1,0 +1,24 @@
+<!-- 10. Create two variables: let user1 = 'Priya' and let user2 = user1. Change user1 to 'Riya' and print both variables. Then, create two arrays: let favApps1 = ['Instagram', 'Spotify'] and let favApps2 = favApps1. Push 'Zomato' to favApps1 and print both arrays. Observe and comment on the difference in behavior between primitive and reference types. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let user1 = 'Priya';
+        let user2 = user1; // copies the value from user1
+        user1 = 'Riya';
+        console.log(user1); // Riya
+        console.log(user2); // Priya
+
+        let favApps1 = ['instagram','spotify'];
+        let favApps2 = favApps1; // points to the same array
+        favApps1.push('zomato');
+        console.log(favApps1); // instagram, spotify, zomato
+        console.log(favApps2); // instagram, spotify, zomato
+    </script>
+</body>
+</html>
