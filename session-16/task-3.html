@@ -1,0 +1,12 @@
+<!-- 3. Given an array of playlists from a music app like Spotify, each with a name and isPublic property, use filter() to create a new array containing only the public playlists. -->
+
+<script>
+    const playlists = [
+        { name: "Chill Vibes", isPublic: true },
+        { name: "Party Hits", isPublic: false },
+        { name: "Road Trip", isPublic: true },
+        { name: "Bollywood Beats", isPublic: false }
+    ];
+    const publicPlaylists = playlists.filter(playlist => playlist.isPublic);
+    console.log(publicPlaylists);
+</script>

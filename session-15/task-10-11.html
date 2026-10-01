@@ -1,0 +1,19 @@
+<!-- 10,11. Refactor the following code to use a class instead of a function constructor:<br><br>function Movie(title, genre) { this.title = title; this.genre = genre; }<br>Movie.prototype.display = function() { console.log(this.title + ' - ' + this.genre); }<br><br>Make sure your new class works the same way. -->
+
+
+<script>
+    class Movie {
+        constructor(title, genre) {
+            this.title = title;
+            this.genre = genre;
+        }
+
+        display() {
+            console.log(this.title + " - " + this.genre);
+        }
+    }
+
+    const movie = new Movie("Inception", "Sci-Fi");
+
+    movie.display();
+</script>

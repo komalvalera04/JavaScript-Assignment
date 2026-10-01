@@ -1,0 +1,25 @@
+<!-- 4,5. Add a method displayPlaylist() to the Playlist class that logs the playlist name and all song titles in a formatted string. -->
+
+
+<script>
+    class Playlist {
+        constructor(name, songs) {
+            this.name = name;
+            this.songs = songs;
+        }
+
+        displayPlaylist() {
+            console.log(`Playlist: ${this.name}`);
+            console.log(`Songs: ${this.songs.join(", ")}`);
+        }
+    }
+
+    const favoritePlaylist = new Playlist("Chill Vibes", [
+        "Believer",
+        "Perfect",
+        "Memories"
+    ]);
+
+    favoritePlaylist.displayPlaylist();
+
+</script>

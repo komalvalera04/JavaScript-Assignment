@@ -1,0 +1,13 @@
+<!-- 6. Use map() to transform an array of Flipkart product objects (each with name and price) into an array of strings formatted as 'Product: [name], Price: ₹[price]'. -->
+
+<script>
+    const products = [
+        { name: "iPhone 15", price: 69999 },
+        { name: "Redmi Note 12", price: 18999 },
+        { name: "OnePlus 12", price: 64999 }
+    ];
+    const productDetails = products.map(product =>
+    `Product: ${product.name}, Price: ₹${product.price}`
+    );
+    console.log(productDetails);
+</script>

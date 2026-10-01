@@ -1,0 +1,26 @@
+<!-- 13,14. Copy an error stack trace from your browser's console when a thrown error occurs (for example, from a failed JSON.parse or invalid URL check), and paste it into ChatGPT. Ask ChatGPT to explain what the stack trace means and summarize the explanation in your own words. -->
+
+<h3>Generated Error</h3>
+function parseData() {
+    JSON.parse("{invalid json}");
+}
+parseData();
+
+
+<h3>ChatGPT Explanation</h3>
+<ul>
+    <li>SyntaxError means the JSON string has invalid syntax.</li>
+    <li>parseData is the function where JSON.parse() failed.</li>
+    <li><anonymous>:2:8 indicates approximately line 2, column 8 of the code executed in the console.</li>
+    <li>The next stack entry shows that parseData() was called from the code at line 5.</li>
+</ul>
+
+<h3>Summary:</h3>
+    <Summary>The program tried to convert invalid JSON into a JavaScript object. <br>JSON.parse() caused a SyntaxError, and the stack trace shows the function and location where the error happened and how the function was called.</Summary>
+<script>
+    function parseData() {
+        JSON.parse("{invalid json}");
+    }
+
+    parseData();
+</script>

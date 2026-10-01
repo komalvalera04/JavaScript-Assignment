@@ -1,0 +1,30 @@
+<!-- 15. Copy a stack trace from a JavaScript error you encounter (for example, by calling a function that throws a custom Error), and paste it into ChatGPT. Ask ChatGPT to explain what the error means and which line caused the problem. Summarize ChatGPT's explanation in your own words in a comment above the code. -->
+
+
+<h3>Generated Error</h3>
+function processPayment() {
+  throw new Error("Payment failed");
+}
+
+processPayment();
+
+<h3>ChatGPT Explanation</h3>
+<ul>
+    <li>Error: Payment failed → the error message.</li>
+    <li>processPayment → the function where the error occurred.</li>
+    <li><anonymous>:5:9 → line 5, column 9, where the error was thrown.</li>
+    <li>The next line shows where processPayment() was called.</li>
+</ul>
+So, in simple words: the function deliberately throws an error, and the stack trace tells us exactly where that error happened and how the function was reached.
+
+<h3>Summary:</h3>
+<summary>The Error was thrown inside processPayment(). The stack trace points to line 5, where throw new Error("Payment failed") caused the problem, and then shows the line from which processPayment() was called.</summary>
+
+
+<script>
+    function processPayment() {
+      throw new Error("Payment failed");
+    }
+
+    processPayment();
+</script>

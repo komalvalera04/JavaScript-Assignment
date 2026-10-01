@@ -1,0 +1,20 @@
+<!-- 6. Build a function checkPlaylistURL(url) for a Spotify-style app that validates if the URL starts with 'https://open.spotify.com/'. If not, throw a custom Error('Invalid Spotify URL'). Use try...catch...finally to handle the error, log the error message, and in the finally block, log 'Validation complete'. -->
+
+
+<script>
+    function checkPlaylistURL(url) {
+    if (!url.startsWith("https://open.spotify.com/")) {
+        throw new Error("Invalid Spotify URL");
+    }
+
+    console.log("Valid Spotify URL");
+    }
+
+    try {
+        checkPlaylistURL("https://example.com/playlist/123");
+    } catch (error) {
+        console.log(error.message);
+    } finally {
+        console.log("Validation complete");
+    }
+</script>

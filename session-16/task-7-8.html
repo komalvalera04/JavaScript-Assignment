@@ -1,0 +1,15 @@
+<!-- 7,8. Given an array of Zomato order objects with a clicks property, use reduce() to calculate the total number of clicks across all orders.<br><br><em><strong>Hint:</strong> Start your reduce with an initial value of 0 and add each order's clicks to the accumulator.</em> -->
+
+<script>
+    const orders = [
+        { id: 1, restaurant: "Pizza Hut", clicks: 120 },
+        { id: 2, restaurant: "Domino's", clicks: 250 },
+        { id: 3, restaurant: "McDonald's", clicks: 180 },
+        { id: 4, restaurant: "Burger King", clicks: 150 }
+    ];
+    const totalClicks = orders.reduce(
+    (total, order) => total + order.clicks,
+    0
+    );
+    console.log("Total Clicks:", totalClicks);
+</script>

@@ -1,0 +1,23 @@
+<!-- 15. Copy a real error message you get from your browser console (from any of the above tasks) and paste it into ChatGPT. Ask ChatGPT to explain what the error means and suggest how to fix it. Write down the explanation in your own words. -->
+
+
+<h3>Error message:</h3>
+
+ReferenceError: cartItems is not defined
+
+<h3>ChatGPT's Explanation:</h3>
+This error means that JavaScript is trying to use the variable cartItems, but the variable has not been declared or defined. <br>To fix it, define cartItems before using it.
+
+<h3>Example fix:</h3>
+
+const cartItems = [ <br>
+  { name: "T-Shirt", price: 599 }, <br>
+  { name: "Jeans", price: 1299 }, <br>
+  { name: "Shoes", price: 1999 } <br>
+];
+<br>
+const total = cartItems.reduce((sum, item) => sum + item.price, 0);
+<br>
+console.log(total);
+<br><br>
+<h3>So, in simple words: I used a variable before creating it, so JavaScript couldn't find it.</h3>

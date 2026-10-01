@@ -1,0 +1,17 @@
+<!-- 7,8.  Build a function checkPaymentAmount(amount) for a Paytm-style app that throws a custom Error 'Amount must be positive' if the amount is less than or equal to zero, and returns 'Payment accepted' otherwise.<br><br><em><strong>Hint:</strong> Use the throw statement to raise your custom error inside the function.</em> -->
+
+
+<script>
+    function checkPaymentAmount(amount) {
+    if (amount <= 0) {
+        throw new Error("Amount must be positive");
+    }
+    return "Payment accepted";
+    }
+
+    try {
+        console.log(checkPaymentAmount(500));
+    } catch (error) {
+        console.log(error.message);
+    }
+</script>

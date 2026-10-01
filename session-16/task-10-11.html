@@ -1,0 +1,13 @@
+<!-- 10,11. Given an array of YouTube video objects with a views property, use the find() method to get the first video that has more than 1 million views. -->
+
+
+<script>
+    const videos = [
+        { title: "JavaScript Tutorial", views: 850000 },
+        { title: "Funny Cat Video", views: 1500000 },
+        { title: "Music Video", views: 2500000 },
+        { title: "Travel Vlog", views: 900000 }
+    ];
+    const popularVideo = videos.find(video => video.views > 1000000);
+    console.log(popularVideo);
+</script>

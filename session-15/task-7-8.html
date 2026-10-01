@@ -1,0 +1,22 @@
+<!-- 7,8. Create a class called FlipkartProduct with properties: title, price, and rating. Write a method getDiscountedPrice(discountPercent) that returns the price after applying the given discount percentage.<br><br><em><strong>Hint:</strong> Use the formula: discounted price = price - (price * discountPercent/100).</em> -->
+
+
+<script>
+    class FlipkartProduct {
+        constructor(title, price, rating) {
+            this.title = title;
+            this.price = price;
+            this.rating = rating;
+        }
+
+        getDiscountedPrice(discountPercent) {
+            return this.price - (this.price * discountPercent / 100);
+        }
+    }
+
+    const product = new FlipkartProduct("Wireless Headphones", 2000, 4.5);
+
+    console.log(product);
+    console.log(`Discounted Price: ₹${product.getDiscountedPrice(20)}`);
+
+</script>

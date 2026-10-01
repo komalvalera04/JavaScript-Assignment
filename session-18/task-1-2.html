@@ -1,0 +1,18 @@
+<!-- 1,2. Open the developer console in your browser and use console.log(), console.warn(), and console.error() to display a mock notification like Instagram's: log a successful post upload, warn if the caption is missing, and show an error if the image fails to upload. -->
+
+
+<script>
+    const caption = "";
+    const imageUploaded = false;
+
+    if (caption === "") {
+        console.warn("Caption is missing.");
+    }
+
+    if (!imageUploaded) {
+        console.error("Image failed to upload.");
+    } else {
+        console.log("Post uploaded successfully!");
+    }
+
+</script>

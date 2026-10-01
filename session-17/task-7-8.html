@@ -1,0 +1,39 @@
+<!-- 7,8. Given a code snippet where individual event listeners are added to each Instagram story card for removal, refactor the code to use a single event listener on the parent container (event delegation) for better efficiency.<br><br><em><strong>Constraint:</strong> Do not use more than one event listener for all cards.</em> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="stories" class="stories">
+        <div class="story-card">
+            <strong>Rahul's Story</strong>
+            <button class="remove-btn">Remove</button>
+        </div>
+
+        <div class="story-card">
+            <strong>Riya's Story</strong>
+            <button class="remove-btn">Remove</button>
+        </div>
+
+        <div class="story-card">
+            <strong>Arjun's Story</strong>
+            <button class="remove-btn">Remove</button>
+        </div>
+    </div>
+    <script>
+        const stories = document.getElementById("stories");
+
+        stories.addEventListener("click", function (event) {
+            if (event.target.classList.contains("remove-btn")) {
+                const storyCard = event.target.closest(".story-card");
+                storyCard.remove();
+            }
+        });
+    </script>
+</body>
+</html>

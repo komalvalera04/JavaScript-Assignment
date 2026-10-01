@@ -1,0 +1,44 @@
+<!-- 12. Given the following code snippet, fix the bug so that clicking the 'X' icon on any card removes only that card, even if cards are added dynamically:<br><br><code>document.querySelectorAll('.remove-btn').forEach(btn => { btn.addEventListener('click', function() { this.parentElement.remove(); }); });</code><br><br><em><strong>Hint:</strong> Use event delegation by adding a single event listener to the parent container instead of looping through all buttons.</em> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container py-5">
+        <div id="cardContainer" class="row g-3">
+            <div class="col-md-4">
+                <div class="card shadow-sm position-relative">
+                    <button class="remove-btn btn-close position-absolute top-0 end-0 m-2" aria-label="Remove product"></button>
+                    <div class="card-body">
+                        <h5 class="card-title">Redmi Note 12</h5>
+                        <p class="card-text text-muted">₹18,999</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow-sm position-relative">
+                    <button class="remove-btn btn-close position-absolute top-0 end-0 m-2" aria-label="Remove product"></button>
+                    <div class="card-body">
+                        <h5 class="card-title">OnePlus 12</h5>
+                        <p class="card-text text-muted">₹64,999</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const container = document.getElementById("cardContainer");
+        container.addEventListener("click", function (event) {
+            if (event.target.classList.contains("remove-btn")) {
+                event.target.closest(".card").remove();
+            }
+        });
+    </script>
+</body>
+</html>

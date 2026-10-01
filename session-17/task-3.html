@@ -1,0 +1,41 @@
+<!-- 3. Create an HTML list of favorite songs where each item has a 'Remove' button. Use event delegation to handle all remove actions by attaching a single click event listener to the parent list element. -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="songList">
+        <li>
+            Believer
+            <button class="remove-btn">Remove</button>
+        </li>
+        <li>
+            Memories
+            <button class="remove-btn">Remove</button>
+        </li>
+        <li>
+            Dandelions
+            <button class="remove-btn">Remove</button>
+        </li>
+        <li>
+            Perfect
+            <button class="remove-btn">Remove</button>
+        </li>
+  </ul>
+
+  <script>
+    const songList = document.getElementById("songList");
+
+    songList.addEventListener("click", function(event) {
+      if (event.target.classList.contains("remove-btn")) {
+        event.target.parentElement.remove();
+      }
+    });
+  </script>
+</body>
+</html>

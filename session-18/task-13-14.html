@@ -1,0 +1,36 @@
+<!-- 13,14. Copy any error message you see in the browser console (from your previous tasks) and paste it into ChatGPT. Ask ChatGPT to explain what the error means and suggest how to fix it, then write down the explanation you received. -->
+
+<b>Error message:</b>
+SyntaxError: "undefined" is not valid JSON
+
+<h3>Explanation:</h3>
+This error occurs because JSON.parse() expects a valid JSON string, but the code passes undefined:
+
+JSON.parse(undefined);
+
+<h3>How to fix it:</h3>
+Pass valid JSON to JSON.parse(), or check that the value exists before parsing.
+
+<hr>
+For example: <br><br>
+
+function fetchUser() {<br>
+  const userData = '{"name":"Rahul"}';<br>
+  return JSON.parse(userData);<br>
+}
+
+<hr>
+Now JSON.parse() receives valid JSON and can convert it into a JavaScript object.
+
+<script>
+    function getUser() {
+        return fetchUser();
+    }
+
+    function fetchUser() {
+        return JSON.parse(undefined);
+    }
+
+    getUser();
+
+</script>

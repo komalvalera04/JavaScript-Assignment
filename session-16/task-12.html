@@ -1,0 +1,13 @@
+<!-- 12. Given an array of Zomato restaurant objects, each with a cuisine property, use find() to get the first restaurant that serves 'Chinese' cuisine.<br><br><em><strong>Hint:</strong> Use the find() method and check the cuisine property inside the callback.</em> -->
+
+
+<script>
+    const restaurants = [
+        { name: "Spice Garden", cuisine: "Indian" },
+        { name: "Dragon House", cuisine: "Chinese" },
+        { name: "Pasta Palace", cuisine: "Italian" },
+        { name: "Golden Wok", cuisine: "Chinese" }
+    ];
+    const chineseRestaurant = restaurants.find(restaurant => restaurant.cuisine === "Chinese");
+    console.log(chineseRestaurant);
+</script>

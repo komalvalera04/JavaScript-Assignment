@@ -1,0 +1,13 @@
+<!-- 4,5. Use the map() method to transform an array of Instagram post objects (each with a likes property) into a new array of just the like counts. -->
+
+
+<script>
+    const posts = [
+        { id: 1, likes: 120 },
+        { id: 2, likes: 450 },
+        { id: 3, likes: 890 },
+        { id: 4, likes: 230 }
+    ];
+    const likeCounts = posts.map(post => post.likes);
+    console.log(likeCounts);
+</script>

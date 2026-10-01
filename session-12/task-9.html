@@ -1,0 +1,13 @@
+<!-- 9. Chain fetch() promises to fetch user data from https://jsonplaceholder.typicode.com/users, parse the JSON response, and then display all user emails in a single alert box separated by commas. -->
+
+
+<script>
+    fetch("https://jsonplaceholder.typicode.com/users")
+    .then(response => response.json())
+    .then(users => {
+        const emails = users.map(user => user.email);
+        alert(emails.join(", "));
+    })
+    .catch(error => console.error("Error:", error));
+
+</script>

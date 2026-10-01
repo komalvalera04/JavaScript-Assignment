@@ -1,0 +1,27 @@
+<!-- 1,2. Create a JavaScript function addPlaylistLink(linkObj) that adds a new music playlist link (like Spotify or YouTube Music) to an array of social links, then saves the updated array to LocalStorage under the key 'myLinks'. -->
+
+
+<script>
+    // Get existing links from LocalStorage
+    let socialLinks = JSON.parse(localStorage.getItem("myLinks")) || [];
+
+    // Function to add a music playlist link
+    function addPlaylistLink(linkObj) {
+
+        // Add the new playlist link to the array
+        socialLinks.push(linkObj);
+
+        // Save the updated array to LocalStorage
+        localStorage.setItem("myLinks", JSON.stringify(socialLinks));
+    }
+
+
+    // Example
+    addPlaylistLink({
+        platform: "Spotify",
+        url: "https://open.spotify.com/playlist/example"
+    });
+
+    console.log(socialLinks);
+
+</script>

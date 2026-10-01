@@ -1,0 +1,31 @@
+<!-- 6. Add a method getSongCount() to the Playlist class that returns the total number of songs in the playlist. Call this method on your instance and display the result. -->
+
+
+<script>
+    class Playlist {
+        constructor(name, songs) {
+            this.name = name;
+            this.songs = songs;
+        }
+
+        displayPlaylist() {
+            console.log(`Playlist: ${this.name}`);
+            console.log(`Songs: ${this.songs.join(", ")}`);
+        }
+
+        getSongCount() {
+            return this.songs.length;
+        }
+    }
+
+    const favoritePlaylist = new Playlist("Chill Vibes", [
+        "Believer",
+        "Perfect",
+        "Memories"
+    ]);
+
+    favoritePlaylist.displayPlaylist();
+
+    console.log(`Total Songs: ${favoritePlaylist.getSongCount()}`);
+
+</script>

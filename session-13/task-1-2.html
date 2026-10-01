@@ -1,0 +1,13 @@
+<!-- 1,2. Create a function validateSpotifyURL(url) that takes a string and checks if it starts with 'https://open.spotify.com/'. If not, throw a custom Error with the message 'Invalid Spotify URL'. -->
+
+
+<script>
+    function validateSpotifyURL(url) {
+        if (!url.startsWith("https://open.spotify.com/")) {
+            throw new Error("Invalid Spotify URL");
+        }
+        console.log("Valid Spotify URL");
+    }
+
+    validateSpotifyURL("https://open.spotify.com/track/12345");
+</script>

@@ -1,0 +1,22 @@
+<!-- 12. Given the following buggy code, run it in your browser and use the stack trace in the console to identify which function is causing the error: function getUser() { return fetchUser(); } function fetchUser() { return JSON.parse(undefined); } getUser(); Write down the function name and line number where the error occurs.<br><br><em><strong>Hint:</strong> Expand the error in the console to view the call stack.</em> -->
+
+<h3>The call stack</h3>
+
+JSON.parse
+fetchUser
+getUser
+
+The function causing the error is fetchUser(), because that's where JSON.parse(undefined) is executed.
+
+<script>
+    function getUser() {
+        return fetchUser();
+    }
+
+    function fetchUser() {
+        return JSON.parse(undefined);
+    }
+
+    getUser();
+
+</script>
